@@ -27,3 +27,7 @@ Conferir se o produto "${PRODUTO}" foi encontrado
     title should be                 Search - My Store
     page should contain image       http://automationpractice.com/img/p/7/7-home_default.jpg
     page should contain link     xpath://*[@id="center_column"]//a[@class="product-name"][contains(text(),"${PRODUTO}")]
+
+Conferir mensagem de erro "${MENSAGEM_ALERTA}"
+    Wait until element is visible   //*[@id="center_column"]/p[@class="alert alert-warning"]
+    Element text should be          //*[@id="center_column"]/p[@class="alert alert-warning"]    ${MENSAGEM_ALERTA}
