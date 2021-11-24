@@ -4,11 +4,12 @@ Library  SeleniumLibrary
 *** Variables ***
 ${url}      http://automationpractice.com/index.php?
 ${BROWSER}  Google Chrome
+${OPTIONS}  add_argument("--disable-dev-chm-usage"); add_argument("--headless") add_argument("--no-sandbox")
 
 
 *** Keywords ***
 Abrir navegador
-    Open Browser       ${url}      ${BROWSER}
+    Open Browser       ${url}      ${BROWSER}    options=${OPTIONS}
 
 Fechar navegador
     Close Browser
